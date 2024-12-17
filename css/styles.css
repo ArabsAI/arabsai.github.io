@@ -19,31 +19,6 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Navigation */
-nav {
-    position: fixed;
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
 /* Sections */
 .section {
     padding: 2rem 2rem;
@@ -168,37 +143,9 @@ nav ul li a {
     font-size: 0.9rem;
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .section {
-        padding: 3rem 1rem;
-    }
-
-    .address {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .office {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
 /* Add some margin to the first section to account for the fixed nav */
 #overview {
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 /* Add styling for the overview list */
@@ -233,7 +180,7 @@ nav ul li a {
 #team,
 #publications,
 #location {
-    margin-top: -2rem;
+    margin-top: 0;
 }
 
 /* Update section padding */
@@ -245,16 +192,64 @@ nav ul li a {
 .brand-title {
     text-align: center;
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .brand-title h1 {
-    font-family: 'IBM Plex Sans Arabic', Arial, sans-serif;
-    font-size: 4.5rem;
-    color: #4a90e2;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 5rem;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg, #4a90e2, #9b59b6, #4a90e2);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 3s linear infinite, glow 2s ease-in-out infinite alternate;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-title h1::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.5;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 2px #4a90e2) 
+                drop-shadow(0 0 4px #4a90e2);
+    }
+    to {
+        filter: drop-shadow(0 0 4px #4a90e2) 
+                drop-shadow(0 0 8px #4a90e2) 
+                drop-shadow(0 0 12px #4a90e2);
+    }
+}
+
+/* Add responsive font size */
+@media (max-width: 768px) {
+    .brand-title h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-title h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* Update existing overview styles */
@@ -262,4 +257,149 @@ nav ul li a {
     font-size: 2rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
+}
+
+/* Dynamic Navigation */
+.dynamic-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.dynamic-nav.visible {
+    transform: translateY(0);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-brand {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4a90e2;
+}
+
+.dynamic-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dynamic-nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.dynamic-nav a:hover {
+    color: #4a90e2;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .dynamic-nav ul {
+        gap: 1rem;
+    }
+    
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dynamic-nav ul {
+        display: none;
+    }
+}
+
+/* Update Dynamic Navigation styles */
+.dynamic-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Add hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #2c3e50;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+
+    .dynamic-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .dynamic-nav.menu-open ul {
+        display: flex;
+    }
+
+    /* Hamburger animation */
+    .dynamic-nav.menu-open .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .dynamic-nav.menu-open .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .dynamic-nav.menu-open .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
 }

@@ -11,27 +11,35 @@
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <script src="js/citations.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="particles-js"></div>
 
     <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#location">Location</a></li>
-        </ul>
+    <nav class="dynamic-nav">
+        <div class="nav-container">
+            <div class="nav-brand">ArabsAI</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Overview Section -->
     <section id="overview" class="section">
         <div class="container">
             <div class="brand-title">
-                <h1>ArabsAI</h1>
+                <h1 data-text="ArabsAI">ArabsAI</h1>
             </div>
             <h2>Research Overview</h2>
             <p>Our research group focuses on advancing the frontiers of Artificial Intelligence and Machine Learning.
