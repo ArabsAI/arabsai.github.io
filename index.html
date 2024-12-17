@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabs AI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="js/citations.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="brand-title">
+                <h1>ArabsAI</h1>
+            </div>
+            <h2>Research Overview</h2>
+            <p>Our research group focuses on advancing the frontiers of Artificial Intelligence and Machine Learning.
+                We specialize in developing robust and interpretable AI systems that can tackle complex real-world
+                challenges.
+                Our current research initiatives span several key areas:</p>
+            <ul>
+                <li>Deep Learning for Computer Vision and Natural Language Processing</li>
+                <li>Reinforcement Learning and Decision Making Systems</li>
+                <li>Explainable AI and Ethical Machine Learning</li>
+                <li>AI for Healthcare and Scientific Discovery</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <a href="https://kayid.ca/" target="_blank" class="team-member-link">
+                        <div class="member-image">
+                            <img src="assets/images/amr.jpg" alt="Amr Kayid">
+                        </div>
+                        <h3>Amr Kayid</h3>
+                    </a>
+                </div>
+
+                <div class="team-member">
+                    <a href="#" class="team-member-link">
+                        <div class="member-image">
+                            <img src="assets/images/teammember.jpg" alt="Team Member 2">
+                        </div>
+                        <h3>Team Member 2</h3>
+                    </a>
+                </div>
+
+                <div class="team-member">
+                    <a href="#" class="team-member-link">
+                        <div class="member-image">
+                            <img src="assets/images/teammember.jpg" alt="Team Member 3">
+                        </div>
+                        <h3>Team Member 3</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section">
+        <div class="container">
+            <h2>Recent Publications</h2>
+            <ul class="publications-list">
+                <!-- Citations will be loaded here dynamically -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div id="map" style="width: 100%; height: 500px;"></div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/worldmap-config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
