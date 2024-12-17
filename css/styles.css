@@ -403,3 +403,61 @@ body {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 }
+
+/* Update section headers styling */
+.section h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #9b59b6);
+    border-radius: 2px;
+}
+
+/* Adjust overview section header to match */
+#overview h2 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+#overview h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #9b59b6);
+    border-radius: 2px;
+}
+
+/* Add responsive font sizes for headers */
+@media (max-width: 768px) {
+    .section h2,
+    #overview h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2,
+    #overview h2 {
+        font-size: 2rem;
+    }
+}
